@@ -1,0 +1,115 @@
+/* Custom Serene Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f4f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d3d7e8;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b2b8d4;
+    }
+
+    .dark ::-webkit-scrollbar-track {
+      background: #1e202e;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #343750;
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #434665;
+    }
+
+    /* Fast cubic-bezier micro-interaction transitions */
+    .transition-fast {
+      transition-property: color, background-color, border-color, opacity, transform, box-shadow;
+      transition-duration: 180ms;
+      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Accessibility Focus Visible */
+    *:focus-visible {
+      outline: 2px solid #6871f7;
+      outline-offset: 2px;
+    }
+
+    /* Soft Frosted Glassmorphism Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(217, 221, 255, 0.6);
+      box-shadow: 0 10px 30px -10px rgba(74, 78, 230, 0.05), 0 4px 12px -2px rgba(111, 116, 154, 0.03);
+    }
+
+    .dark .glass-card {
+      background: rgba(35, 37, 55, 0.82);
+      border: 1px solid rgba(67, 70, 101, 0.6);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(104, 113, 247, 0.35);
+      box-shadow: 0 14px 36px -10px rgba(104, 113, 247, 0.12), 0 6px 16px -2px rgba(111, 116, 154, 0.05);
+    }
+
+    .glass-nav {
+      background: rgba(247, 248, 252, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(217, 221, 255, 0.7);
+    }
+
+    .dark .glass-nav {
+      background: rgba(23, 25, 35, 0.85);
+      border-bottom: 1px solid rgba(52, 55, 80, 0.7);
+    }
+
+    /* Clean Print Stylesheet for PDF Output */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #1e293b !important;
+        font-size: 10pt;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-card {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        color: #1e293b !important;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+      }
+      .print-text-dark {
+        color: #0f172a !important;
+      }
+      .print-badge {
+        background-color: #f1f5f9 !important;
+        color: #334155 !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+      a {
+        text-decoration: underline !important;
+        color: #383bc7 !important;
+      }
+      #drawerBackdrop, #drawerContent {
+        display: none !important;
+      }
+    }
+
+    /* Motion Accessibility Rules */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
